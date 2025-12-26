@@ -41,6 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "core",
+    "premium",
+    "teams",
+    "tournois",
+    "accounts",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -54,6 +59,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'codm_tech.urls'
+
+AUTH_USER_MODEL = "accounts.Utilisateur"
+
 
 TEMPLATES = [
     {
