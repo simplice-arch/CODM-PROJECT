@@ -1,0 +1,52 @@
+1. Table TOURNAMENTS 🏆
+Stocke les informations principales de chaque tournoi
+
+- tournament_id (string, clé primaire)
+- tournament_name (string)
+- game_mode (string: BR/MJ/1v1)
+- team_size (number: 1/4/5)
+- max_teams (number: 4/8/16/32)
+- format (string: single/double)
+- status (string: open/ongoing/completed)
+- created_at (string ISO date)
+- updated_at (string ISO date)
+- organizer_id (string)
+
+2. Table TEAMS 👥
+Stocke toutes les équipes inscrites
+
+- team_id (string, clé primaire)
+- tournament_id (string, clé étrangère)
+- team_name (string)
+- team_leader (string)
+- team_phone (string)
+- team_members (string, séparé par virgules)
+- registered_at (string ISO date)
+- status (string: active/eliminated)
+
+3. Table MATCHES ⚔️
+Stocke tous les matchs du bracket
+
+- match_id (string, clé primaire)
+- tournament_id (string, clé étrangère)
+- round (number: 1, 2, 3...)
+- match_number (number: position dans le round)
+- team1_id (string, clé étrangère)
+- team2_id (string, clé étrangère)
+- score1 (number, nullable)
+- score2 (number, nullable)
+- winner_id (string, nullable)
+- status (string: pending/in_progress/completed)
+- scheduled_at (string ISO date, nullable)
+- completed_at (string ISO date, nullable)
+
+4. Table ORGANIZERS 🎮
+Stocke les informations des organisateurs
+
+- organizer_id (string, clé primaire)
+- username (string)
+- email (string)
+- ign (string: In-Game Name)
+- subscription_tier (string: free/pro/elite)
+- created_at (string ISO date)
+- tournaments_created (number)

@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "tournois",
     "accounts",
     "rest_framework",
+    "webhooks",
 ]
 
 MIDDLEWARE = [
